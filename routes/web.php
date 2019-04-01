@@ -27,4 +27,5 @@ $html = <<< EOF
 EOF;
 
 
-Route::get('hello/{id?}', 'HelloController@index');
+Route::get('hello', 'HelloController@index');
+Route::post('hello', 'HelloController@post');

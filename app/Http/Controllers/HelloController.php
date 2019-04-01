@@ -7,11 +7,11 @@ use Illuminate\Http\Response;
 
 class HelloController extends Controller
 {
-    public function index($id = '111') {
-        $data = [
-            'msg'=>'コントローラから渡されたメッセージ',
-            'id'=>$id,
-            ];
-       return view('hello.index', $data);
+    public function index() {
+       return view('hello.index', ['msg'=>'']);
+    }
+
+    public function post(Request $request) {
+        return view ('hello.index', ['msg'=>$request->msg]);
     }
 }
